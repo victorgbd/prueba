@@ -6,13 +6,12 @@ form.addEventListener('submit', (e) => {
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
 
-    // Validate form fields
+    // Esto valida que los campos del formulario no esten vacios
     if (name === '' || email === '' || message === '') {
-        alert('Please fill out all fields.');
+        alert('Porfavor llenar todos los campos.');
         return;
     }
 
-    // Send form data to server or email
-    // You can add your own logic here to handle form submission
+    //Envia los datos del formulario al servidor
     console.log('Form submitted:', { name, email, message });
 });
