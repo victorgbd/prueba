@@ -4,43 +4,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Jose Gonzalez</title>
+    <title>Victor José González</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
-<body>
-    <header>
-        <h1>Victor Jose Gonzalez</h1>
+<body class="body">
+
+    <header class="header">
+        <h1 class="header-title">Victor José González</h1>
+        <div class="topnav" id="myTopnav">
+            <a href="#inicio" class="scroll">Inicio</a>
+            <a href="#sobremi" class="scroll">Sobre mi</a>
+            <a href="#habilidades" class="scroll">Habilidades</a>
+            <a href="#contactame" class="scroll">Contáctame</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleDrp()">
+                <!--para llamar a la funcion directamente sin navegar o recargar la pag-->
+                <i class="fa-solid fa-bars" id="btnToggle"></i>
+            </a>
+        </div>
+        <div class="dropdown_menu">
+            <li><a href="#inicio" class="scroll">Inicio</a></li>
+            <li><a href="#sobremi" class="scroll">Sobre mí</a></li>
+            <li><a href="#habilidades" class="scroll">Habilidades</a></li>
+            <li><a href="#contactame" class="scroll">Contáctame</a></li>
+
+        </div>
     </header>
-    <main>
-        <section>
-            <h2>Sobre mi</h2>
-            <p>¡Hola! Soy Víctor José González, un apasionado programador de aplicaciones móviles con especialización en
+    <main class="main">
+
+
+        <section class="section-inicio" id="inicio">
+            <div class="cir-img">
+                <img src="assets\profile.jpg">
+            </div>
+            <h1>Victor José González</h1>
+            <p>Ingeniero en Sistemas Computacionales</p>
+        </section>
+
+
+        <section class="section" id="sobremi">
+            <h2 class="section-title">Sobre mí</h2>
+            <p class="section-text">Soy un apasionado programador de aplicaciones móviles
+                con especialización en
                 Flutter. Me gradué de la Universidad Tecnológica de Santiago, donde adquirí una sólida base en
                 desarrollo de software y tecnologías móviles. <br> <br>
 
-                Mi objetivo es crear aplicaciones innovadoras y eficientes que mejoren la experiencia del usuario. Con
-                un enfoque en la calidad y la usabilidad, me esfuerzo por mantenerme al día con las últimas tendencias y
+                Mi objetivo es crear aplicaciones innovadoras y eficientes que mejoren la experiencia del usuario.
+                Con
+                un enfoque en la calidad y la usabilidad, me esfuerzo por mantenerme al día con las últimas
+                tendencias y
                 mejores prácticas en el desarrollo móvil. <br> <br>
 
-                Estoy siempre en busca de nuevos desafíos y oportunidades para aplicar mis habilidades y conocimientos.
+                Estoy siempre en busca de nuevos desafíos y oportunidades para aplicar mis habilidades y
+                conocimientos.
                 Si estás buscando a alguien dedicado, detallista y con una fuerte ética de trabajo, ¡estoy aquí para
                 ayudarte a llevar tu proyecto al siguiente nivel!</p>
         </section>
-        <section>
-            <h2>Contáctame</h2>
-            <form id="contact-form">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name"><br><br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email"><br><br>
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" maxlength="1000"></textarea><br><br>
-                <input type="submit" value="Enviar">
+
+        <section class="section" id="habilidades">
+            <h2 class="section-title">Habilidades</h2>
+            <div class="skill">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        Flutter
+                        <span class="skill-level">Avanzado</span>
+                    </div>
+                    <div class="skill-item">
+                        Python
+                        <span class="skill-level">Avanzado</span>
+                    </div>
+                    <div class="skill-item">
+                        SQL & NoSQL
+                        <span class="skill-level">Avanzado</span>
+                    </div>
+                    <div class="skill-item">
+                        HTML
+                        <span class="skill-level">Intermedio</span>
+                    </div>
+                    <div class="skill-item">
+                        CSS
+                        <span class="skill-level">Intermedio</span>
+                    </div>
+                    <div class="skill-item">
+                        JavaScript
+                        <span class="skill-level">Intermedio</span>
+                    </div>
+
+                    <div class="skill-item">
+                        Git
+                        <span class="skill-level">Intermedio</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="section" id="contactame">
+            <h2 class="section-title">Contáctame</h2>
+            <form id="contact-form" class="form">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input type="text" id="nombre" name="name" class="form-input"><br><br>
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" class="form-input"><br><br>
+                <label for="asunto" class="form-label">Asunto:</label>
+                <input type="text" id="asunto" name="asunto" class="form-input"><br><br>
+                <label for="mensaje" class="form-label">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" class="form-textarea" maxlength="1000"></textarea><br><br>
+                <input type="submit" value="Enviar" class="form-submit">
             </form>
         </section>
     </main>
-    <footer>
+    <footer class="footer">
         <p>&copy; 2024 Víctor José González. Todos los derechos reservados.</p>
     </footer>
     <script src="script.js"></script>
