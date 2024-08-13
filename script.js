@@ -62,6 +62,8 @@ function showModal(texto, isWarning) {
     const paragraphs = document.querySelectorAll('.modal-body p');
     if (isWarning) {
         document.querySelector('.modal-content').style.backgroundColor = '#f7bb05'; // Cambia el color del modal
+    } else {
+        document.querySelector('.modal-content').style.backgroundColor = '#4CAF50'; // Cambia el color del modal
     }
     paragraphs.forEach((p) => {
         p.textContent = texto;
