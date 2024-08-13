@@ -104,7 +104,7 @@ body {
 .form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
 }
 
 .form-label {
@@ -114,9 +114,12 @@ body {
 
 .form-input,
 .form-textarea {
-    width: 100%;
+    width: calc(100% - 1em);
+    /* Ajusta el ancho total teniendo en cuenta el margen derecho */
     padding: 0.5em;
     margin-bottom: 1em;
+    margin-right: 1em;
+    /* Agrega separación a la derecha */
     border: 1px solid #ccc;
     border-radius: 0.25em;
 }
@@ -129,7 +132,7 @@ body {
 .form-submit {
     background-color: #333;
     color: #fff;
-    padding: 0.5em 1em;
+    padding: 0.7em 5em;
     border: none;
     border-radius: 0.25em;
     cursor: pointer;
@@ -244,7 +247,9 @@ body {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* tamaño que van tener las columnas y que se ajuste automaticamente los elementos a la pantalla */
     gap: 20px;
+    /*espacio entre filas y columnas*/
 }
 
 .skill-item {
@@ -265,4 +270,93 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 14px;
+}
+
+
+/* Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    /* lo pone en el top */
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* ancho total */
+    height: 100%;
+    /* altura total */
+    overflow: auto;
+    /* habilita el scroll si es necesario  */
+    background-color: rgb(0, 0, 0);
+    /* color Fallback (para mantener compatibilidad)*/
+    background-color: rgba(0, 0, 0, 0.4);
+    /* negro con opacidad */
+}
+
+/* Modal */
+.modal-content {
+    position: relative;
+    background-color: #4CAF50;
+    margin: auto;
+    border-radius: 15px;
+    padding: 5px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    /* animacion para versiones antiguas basadas en webkit */
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+
+}
+
+/* Animación */
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* boton de cerrar */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #7a7a7a;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+}
+
+.modal-body {
+    padding: 2px 16px;
+    color: white;
 }

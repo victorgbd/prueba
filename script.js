@@ -14,18 +14,19 @@ form.addEventListener('submit', (e) => {
 
     // Esto valida que los campos del formulario no esten vacios
     if (nombre === '' || email === '' || asunto === '' || mensaje === '') {
-        alert('Porfavor llenar todos los campos.');
+        showModal('Porfavor llenar todos los campos', true);
         return;
     }
     // Esto valida que el email sea valido
     if (!esEmailValido(email)) {
-        alert('Email invalido');
+        showModal('Email invalido', true);
         return;
     }
 
     //Envia los datos del formulario al servidor
     console.log('Form submitted:', { nombre, email, asunto, mensaje });
-    alert(`Hola ${nombre} su mensaje fue enviado correctamente`);
+
+    showModal(`Hola ${nombre} su mensaje fue enviado correctamente`, false);
 });
 
 const dropdown = document.querySelector('.dropdown_menu'); //trae el dropdown segun su clase de css
@@ -46,9 +47,41 @@ document.querySelectorAll('.scroll').forEach(anchor => {
         const targetElement = document.querySelector(targetId);// trae el elemento que hace referencia el atributo
 
         window.scrollTo({
-            top: targetElement.offsetTop,
+            top: targetElement.offsetTop + -55,
             behavior: 'smooth'
         });
         toggleDrp();
     });
 });
+
+function showModal(texto, isWarning) {
+    // trae el modal
+    var modal = document.getElementById("myModal");
+    // trae le boton de cerrar que esta en un <span>
+    var span = document.getElementsByClassName("close")[0];
+    const paragraphs = document.querySelectorAll('.modal-body p');
+    if (isWarning) {
+        document.querySelector('.modal-content').style.backgroundColor = '#f7bb05'; // Cambia el color del modal
+    }
+    paragraphs.forEach((p) => {
+        p.textContent = texto;
+    });
+    modal.style.display = "block"; // presenta el modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    // cuando hace click fuera del modal se cierra
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    //cierra el modal cuando pasan 4 segundos
+    setTimeout(function () {
+        modal.style.display = "none";
+    }, 4000);
+
+}
+
+
+
